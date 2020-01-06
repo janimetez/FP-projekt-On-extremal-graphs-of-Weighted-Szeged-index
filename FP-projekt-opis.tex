@@ -1,0 +1,49 @@
+\documentclass[10pt, a4paper]{article}
+\usepackage[slovene]{babel}
+\usepackage[utf8]{inputenc} %za šumnike
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+
+\begin{document}
+
+\begin{center}
+\Huge \textbf{Skupina 7: On extremal graphs of Weighted Szeged index} \\
+\medskip
+\Large Bor Rotar, Jani Metež\\
+\end{center}
+
+\section{Navodilo}
+
+Nedavno je bila predstavljena nove verzija Szegedovega indeksa imenovana obteženi Szgedov indeks:
+\begin{center}
+ $$wSz(G) =\sum_{e=uv \in E(G)}[deg(u)+ deg(v) ]\cdot n_{u}(e)\cdot n_{v}(e)$$.
+\end{center}
+ 
+\medskip
+Pripombe:
+
+\begin{enumerate}
+\item $deg(u)$ je stopnja vozlišča
+\item $n_{u}(e)$ je moč množice vseh vozlišč, ki so bližje $u$ kot pa $v$ \\ (vključno z $u$ in $v$)
+\item Obteženi Szgadov indeks je definiran za enostavne grafe
+\end{enumerate}
+\medskip
+
+Naloga zahteva, da preverimo, če res drži, da so povezani grafi z $n$ vozlišči z minimalnim $wSz$ vedno drevesa in odkriti čim več njihovih lastnosti. Problem je bil že obravnavan za $n \leq 25$, zato je smiselno, da preverjamo za večje $n$-je.
+
+
+\section{Opis dela}
+
+V $Sage$-u oz. $Cocalc$-u bo potrebno definirati $wSz$ in ugotoviti čim bolj enostaven način za generiranje grafov, ki minimizirajo ta indeks. Ko bo to storjeno, bo potrebno le še opaziti čim več možnih lastnosti teh grafov in od katerega števila vozlišč naprej veljajo. Nekatere lastnosti že poznamo iz vira.
+
+\begin{thebibliography}{9}
+\bibitem{latexcompanion} 
+Jan Boka, Boris Furtulab, Nikola Jedličkova in Riste Škrekovski
+\textit{On Extremal Graphs of Weighted Szeged Index} 
+https://arxiv.org/abs/1901.04764, 15 Jan 2019.
+ 
+
+\end{thebibliography}
+
+\end{document}
