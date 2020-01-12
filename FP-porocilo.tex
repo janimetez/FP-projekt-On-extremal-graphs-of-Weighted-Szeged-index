@@ -9,6 +9,9 @@
 \usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=2.5cm]{geometry}
 \usepackage{indentfirst}
 \usepackage{tikz}
+\usepackage{tabularx}
+\graphicspath{ {./FP-projekt-slike/} }
+
 \setlength{\parindent}{0.5cm}
 
 
@@ -143,19 +146,93 @@ def min_wSz(H,koraki):
     return primerjajH
 \end{verbatim}
 
-V algoritem pa lahko tudi vstavimo graf za katerega sklepamo, da ima minimalni $wSz$, in če ne najde boljšega grafa lahko sklepamo, da ima ta graf že minimalni $wSz$.
+V algoritem pa lahko tudi vstavimo graf za katerega sklepamo, da ima minimalni $wSz$, in če ne najde boljšega grafa (po zadostnem številu korakov)  lahko sklepamo, da ima ta graf že minimalni $wSz$.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.7]{koncni_graf25}
+\caption{Graf na 25 vozliščih $wSz = 6686$}
+\end{figure}
 
 \newpage
-\begin{table}[!h]
-\begin{tabular}{|c|c|c|c|c|c|c|c|}
-\hline
-n&&&&&&&\\\hline
-&&&&&&&\\\hline
-&&&&&&&\\\hline
-&&&&&&&\\\hline
-\end{tabular}
-\end{table}
+\section[Primer iskanja in ugotovitve]{Primer iskanja in ugotovitve}
 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.7]{iskanje_graf26}
+\caption{Začetni graf na 26 vozliščih $wSz = 7682$}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.7]{iskanje_graf26_2}
+\caption{Graf na 26 vozliščih po 40000 korakih $wSz = 7632$}
+\end{figure}
+
+\newpage
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.7]{iskanje_graf26_3}
+\caption{Graf na 26 vozliščih po 80000 korakih $wSz = 7560$}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.7]{koncni_graf26}
+\caption{Graf na 26 vozliščih na koncu $wSz = 7350$}
+\end{figure}
+
+Končni grafi so bili vedno drevesa, brez ciklov in vedno ena povezava manj od števila vozlišč. Rezultati podpirajo predpostavko, da imajo  minimalni $wSz$ le drevesa.
+
+\newpage
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{koncni_graf27}
+\caption{Graf na 27 vozliščih na koncu $wSz = 8118$}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{koncni_graf28}
+\caption{Graf na 28 vozliščih na koncu $wSz = 8910$}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{koncni_graf29}
+\caption{Graf na 29 vozliščih na koncu $wSz = 9864$}
+\end{figure}
+
+Opazimo, kako z večanjem števila vozlišč nastane novo poddrevo, ki je povezano direktno s korenom (vozlišče 0). 
+
+\newpage
+
+\section[Lastnosti ekstremnih grafov]{Lastnosti ekstremnih grafov}
+
+Za grafe s 7 do 29 vozlišči smo poiskali $wSz$ in še primerjali s grafom na ena manj vozlišču.
+
+\begin{table}[!h]
+\centering
+\caption{Izračunani wSz-ji minimalnih grafov in primerjave s prejšnimi}
+\begin{tabularx}{\linewidth}{|*{6}{X|}}
+\hline
+n & wSz & razlika &  n & wSz & razlika      \\ \hline
+  7 & 204& -     & 19 & 3292& 418         \\ \hline
+  8 & 306& 102& 20 & 3758&  466      \\ \hline
+  9 & 432& 126& 21 & 4240&  482      \\ \hline
+10 & 578& 146& 22 & 4806&  566      \\ \hline
+11 & 762& 184& 23 & 5396&  590      \\ \hline
+12 & 970& 208& 24 & 6038&  642       \\ \hline
+13 & 1210& 240& 25 & 6686& 648         \\ \hline
+14 & 1476& 266& 26 & 7350& 664        \\ \hline
+15 & 1780& 304& 27 & 8118& 768       \\ \hline
+16 & 2100& 320& 28 & 8910& 792        \\ \hline
+17 & 2472& 372& 29 & 9864& 954         \\ \hline
+18 & 2874& 402&  &&         \\ \hline
+\end{tabularx}
+\end{table}
 
 \newpage
 \section[Viri]{Viri}
