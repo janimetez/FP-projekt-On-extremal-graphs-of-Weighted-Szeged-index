@@ -91,7 +91,7 @@ def wSz(M):
 
 \subsection[Spreminjanje grafa]{Spreminjanje grafa}
 
-Algoritem vzame nek povezan graf in mu dodaja ali odstranjuje povezave, pri tem pazi na to, da graf ostaja povezan (wSz je definiran za enostavne torej povezane grafe). 
+Algoritem vzame nek povezan graf in mu dodaja ali odstranjuje povezave, pri tem pazi na to, da graf ostaja povezan (wSz je definiran za enostavne, torej povezane grafe). 
 
 \begin{verbatim}
 from sage.graphs.connectivity import is_connected
@@ -128,9 +128,9 @@ def novo_vozlisce(G):
 
 \subsection[Algoritem za minimiziranje wSz]{Algoritem za minimiziranje wSz}
 
-Ko pogledamo grafe z minimalnim $wSz$ do 25 vozlišč opazimo, da so si podobni. Sklepamo: če grafu na $n$ vozliščih, ki že ima minimalni $wSz$, dodamo novo vozlišče s povezavo, bomo lažje prišli do grafa z minimalnim $wSz$, kot pa če to iščemo na čisto novem grafu.\\
+Ko pogledamo grafe z minimalnim $wSz$ do 25 vozlišč opazimo, da so si podobni. Sklepamo: če grafu na $n$ vozliščih, ki že ima minimalni $wSz$, dodamo novo vozlišče s povezavo, bomo lažje prišli do grafa z minimalnim $wSz$ na $(n+1)$ vozliščih, kot pa če to iščemo na čisto novem grafu.\\
 \\
-Torej, da najdemo graf na $n$ vozliščih z $min(wSz)$ bomo grafu na $(n-1)$ vozliščih z že minimiziranim $wSz$ dodali vozlišle in povezavo in ga spreminjali ter te spremembe obdržali, če je $wSz$ novega grafa manjši. Ko $wSz$ ne bomo mogli več zmanjšati, algoritem oz. ponovitve algoritma zaključimo.
+Torej, da najdemo graf na $n$ vozliščih z $min(wSz)$ bomo grafu na $(n-1)$ vozliščih z že minimiziranim $wSz$ dodali vozlišče in povezavo in ga spreminjali ter te spremembe obdržali, če je $wSz$ novega grafa manjši. Ko $wSz$ ne bomo mogli več zmanjšati, algoritem oz. ponovitve algoritma zaključimo.
 
 \begin{verbatim}
 def min_wSz(H,koraki):
@@ -211,7 +211,7 @@ Opazimo, kako z večanjem števila vozlišč nastane novo poddrevo, ki je poveza
 
 \section[Lastnosti ekstremnih grafov]{Lastnosti ekstremnih grafov}
 
-Za grafe s 7 do 29 vozlišči smo poiskali $wSz$ in še primerjali s grafom na ena manj vozlišču.
+Za grafe s 7 do 29 vozlišči smo poiskali $wSz$ in še primerjali to vrednost z vrednostjo na grafu z ena manj vozlišči.
 
 \begin{table}[!h]
 \centering
